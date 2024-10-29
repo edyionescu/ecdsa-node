@@ -1,0 +1,44 @@
+{
+  "name": "ecdsa-node-client",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint ."
+  },
+  "keywords": [
+    "ecdsa",
+    "secp256k1",
+    "react",
+    "tailwindcss",
+    "vite",
+    "eslint"
+  ],
+  "author": "Edy Ionescu <errorsmith@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@heroicons/react": "^2.1.5",
+    "ethereum-cryptography": "^3.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "@tailwindcss/forms": "^0.5.9",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.13.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
+    "eslint-plugin-react-refresh": "^0.4.14",
+    "globals": "^15.11.0",
+    "postcss": "^8.4.47",
+    "sass": "^1.80.4",
+    "tailwindcss": "^3.4.14",
+    "vite": "^5.4.10"
+  }
+}

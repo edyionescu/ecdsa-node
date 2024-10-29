@@ -1,0 +1,28 @@
+{
+  "name": "ecdsa-node-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon .",
+    "generate": "node scripts/generate.js"
+  },
+  "keywords": [
+    "ecdsa",
+    "secp256k1",
+    "node",
+    "express"
+  ],
+  "author": "Edy Ionescu <errorsmith@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@dotenvx/dotenvx": "^1.21.0",
+    "cors": "^2.8.5",
+    "ethereum-cryptography": "^3.0.0",
+    "express": "^4.21.1",
+    "nodemon": "^3.1.7"
+  }
+}
