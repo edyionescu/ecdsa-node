@@ -19,7 +19,7 @@
     "node": ">=20.0.0"
   },
   "dependencies": {
-    "@dotenvx/dotenvx": "^1.25.1",
+    "@dotenvx/dotenvx": "^1.28.0",
     "cors": "^2.8.5",
     "ethereum-cryptography": "^3.0.0",
     "express": "^4.21.1",
