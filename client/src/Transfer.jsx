@@ -56,12 +56,12 @@ function Transfer({ sender, balance, setBalance, transfers, setTransfers }) {
   const hasBalance = balance > 0;
 
   return (
-    <div className="overflow-hidden rounded-lg bg-white shadow">
+    <div className="overflow-hidden rounded-lg bg-white shadow-sm">
       <div className="px-4 py-5 sm:p-6">
         <form onSubmit={transfer}>
           <h1 className="text-base font-semibold leading-6 text-gray-900 uppercase">Transfer</h1>
 
-          <div className="isolate mb-5 mt-5 -space-y-px rounded-md shadow-sm">
+          <div className="isolate mb-5 mt-5 -space-y-px rounded-md shadow-xs">
             <div className="relative rounded-md rounded-b-none px-3 pb-1.5 pt-2.5 ring-1 ring-inset ring-gray-300 focus-within:z-10 focus-within:ring-2 focus-within:ring-gray-600">
               <label htmlFor="amount" className="block text-sm font-medium text-gray-900">
                 Amount
@@ -99,7 +99,7 @@ function Transfer({ sender, balance, setBalance, transfers, setTransfers }) {
             <button
               type="submit"
               disabled={!hasBalance}
-              className="inline-flex w-full items-center justify-center gap-x-2 rounded-md px-3.5 py-2.5 text-sm font-semibold tracking-wider text-white shadow-sm bg-gray-900 hover:bg-gray-700 disabled:cursor-not-allowed disabled:bg-gray-400"
+              className="inline-flex w-full items-center justify-center gap-x-2 rounded-md px-3.5 py-2.5 text-sm font-semibold tracking-wider text-white shadow-xs bg-gray-900 hover:bg-gray-700 disabled:cursor-not-allowed disabled:bg-gray-400"
             >
               Send
               <ArrowRightCircleIcon aria-hidden="true" className="h-5 w-5" />

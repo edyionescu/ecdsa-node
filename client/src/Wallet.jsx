@@ -20,7 +20,7 @@ function Wallet({ setSender, balance, setBalance }) {
   }
 
   return (
-    <div className="overflow-hidden rounded-lg bg-white shadow relative">
+    <div className="overflow-hidden rounded-lg bg-white shadow-sm relative">
       <div className="px-4 py-5 sm:p-6 ">
         <h1 className="text-base font-semibold leading-6 text-gray-900 uppercase">Wallet</h1>
 
