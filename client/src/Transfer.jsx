@@ -5,9 +5,12 @@ import { ArrowRightCircleIcon } from '@heroicons/react/20/solid';
 function Transfer({ sender, balance, setBalance, transfers, setTransfers }) {
   const [nonce, setNonce] = useState(Date.now()); // used to protect against transaction replay
 
-  useEffect(() => {
-    document.querySelector('form').reset();
-  }, [sender]);
+  useEffect(
+    function resetForm() {
+      document.querySelector('form').reset();
+    },
+    [sender]
+  );
 
   async function transfer(ev) {
     ev.preventDefault();

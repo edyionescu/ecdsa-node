@@ -10,8 +10,8 @@ function App() {
   const [sender, setSender] = useState('');
   const [transfers, setTransfers] = useState([]);
 
-  useEffect(() => {
-    async function fetchTransfers() {
+  useEffect(function fetchTransfers() {
+    (async () => {
       try {
         const server = import.meta.env.VITE_SERVER_BASE_URL;
         const response = await fetch(`${server}/transfers`);
@@ -20,8 +20,7 @@ function App() {
       } catch ({ message }) {
         console.error(message);
       }
-    }
-    fetchTransfers();
+    })();
   }, []);
 
   return (
