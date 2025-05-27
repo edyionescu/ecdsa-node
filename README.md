@@ -1,5 +1,8 @@
 # ECDSA node
 
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/edyionescu/ecdsa-node)
+![GitHub License](https://img.shields.io/github/license/edyionescu/ecdsa-node)
+
 React frontend that communicates with a Node.js server responsible for transferring balances between addresses by creating digital signatures with the appropriate private keys and verifying them on the backend.
 
 It uses the [Ethereum Cryptography library](https://github.com/ethereum/js-ethereum-cryptography), specifically the [elliptic curve operations](https://github.com/paulmillr/noble-curves) on the curve secp256k1.
