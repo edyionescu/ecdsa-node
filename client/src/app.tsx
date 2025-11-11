@@ -1,10 +1,10 @@
 import type { Transfer as TransferType } from '@ecdsa-node/schema';
 import { useEffect, useState } from 'react';
 
-import History from './History';
-import ThemeToggle from './ThemeToggle';
-import Transfer from './Transfer';
-import Wallet from './Wallet';
+import History from './history';
+import ThemeToggle from './theme-toggle';
+import Transfer from './transfer';
+import Wallet from './wallet';
 
 function App() {
   const [balance, setBalance] = useState(0);
