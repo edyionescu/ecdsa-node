@@ -1,0 +1,28 @@
+{
+  "name": "ecdsa-node",
+  "private": true,
+  "version": "1.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm --parallel dev",
+    "build": "pnpm --filter='@ecdsa-node/client' build",
+    "format": "prettier --write .",
+    "lint": "pnpm --filter=\"./client\" lint && pnpm --filter=\"./server\" lint",
+    "typecheck": "pnpm --filter=\"./client\" typecheck && pnpm --filter=\"./server\" typecheck"
+  },
+  "author": "Edy Ionescu <errorsmith@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/node": "^24.10.0",
+    "eslint": "^9.39.1",
+    "globals": "^16.5.0",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.4",
+    "zod": "^4.1.12"
+  }
+}

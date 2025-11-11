@@ -1,7 +1,6 @@
 import { secp256k1 } from 'ethereum-cryptography/secp256k1.js';
-import { keccak256 } from 'ethereum-cryptography/keccak.js';
 import { bytesToHex as toHex } from 'ethereum-cryptography/utils.js';
-import { getAddress } from '../lib/index.js';
+import { getAddress } from '../lib/index.ts';
 
 console.clear();
 

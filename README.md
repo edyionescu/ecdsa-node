@@ -9,20 +9,27 @@ It uses the [Ethereum Cryptography library](https://github.com/ethereum/js-ether
 
 ![demo](ecdsa-node.png)
 
+## Prerequisites
+
+- [Node.js](https://nodejs.org/) version 20+
+- [pnpm](https://pnpm.io/) version 10+
+
 ## Usage
 
 #### Client ([React](https://react.dev/), [Vite](https://vite.dev/), [Tailwind CSS](https://tailwindcss.com/))
 
 1. Open the `/client` folder from terminal.
-2. Run `npm install` to install all the dependencies.
-3. Run `npm run dev` to start the application .
-4. Visit the application at http://127.0.0.1:5173/.
+2. `cat .env.example > .env`
+3. Run `pnpm install` to install all the dependencies.
+4. Run `pnpm dev` to start the application[^1].
+5. Visit the application at http://127.0.0.1:5173/.
 
 #### Server ([Express](https://expressjs.com/))
 
 1. Open the `/server` folder from terminal.
-2. Run `npm install` to install all the dependencies.
-3. Get private key/address pairs by running `npm run generate` and copy them into `accounts.config.json` using the JSON structure below:
+2. `cat .env.example > .env`
+3. Run `pnpm install` to install all the dependencies.
+4. Get private key/address pairs by running `pnpm generate` and copy them into `accounts.config.json` using the JSON structure below:
 
    ```
    {
@@ -39,4 +46,6 @@ It uses the [Ethereum Cryptography library](https://github.com/ethereum/js-ether
    }
    ```
 
-4. Run `npm run dev` to start the server.
+5. Run `pnpm dev` to start the server[^1].
+
+[^1]: Alternatively, you can run both the client and server in parallel. Either use `pnpm dev` in the root directory, or run the task included in `.vscode/tasks.json` with `Ctrl+Shift+P` / `Cmd+Shift+P` > `Tasks: Run Task` > `Start: Client & Server`.

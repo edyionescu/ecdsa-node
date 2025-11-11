@@ -1,0 +1,31 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start: Client & Server",
+      "detail": "Starts the Vite client and the Express server in parallel.",
+      "dependsOn": ["Client: Start (Vite)", "Server: Start (Express)"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Client: Start (Vite)",
+      "type": "shell",
+      "command": "pnpm dev",
+      "problemMatcher": [],
+      "detail": "Runs the Vite development server for the client application.",
+      "options": {
+        "cwd": "${workspaceFolder}/client"
+      }
+    },
+    {
+      "label": "Server: Start (Express)",
+      "type": "shell",
+      "command": "pnpm dev",
+      "problemMatcher": [],
+      "detail": "Starts the Express server for the backend API.",
+      "options": {
+        "cwd": "${workspaceFolder}/server"
+      }
+    }
+  ]
+}

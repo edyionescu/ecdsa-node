@@ -1,6 +1,7 @@
+import type { Transfer } from '@ecdsa-node/schema';
 import { formatDateTime } from './lib';
 
-function History({ selectedAddress, transfers }) {
+function History({ selectedAddress, transfers }: { selectedAddress: string; transfers: Transfer[] }) {
   transfers = transfers.filter((transfer) => {
     if (selectedAddress.length == 0) {
       return transfer;

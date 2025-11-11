@@ -1,11 +1,14 @@
 {
-  "name": "ecdsa-node-server",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "@ecdsa-node/server",
+  "private": true,
+  "version": "1.1.0",
+  "main": "index.ts",
   "type": "module",
   "scripts": {
-    "dev": "nodemon .",
-    "generate": "node scripts/generate.js"
+    "dev": "nodemon",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "generate": "node scripts/generate.ts"
   },
   "keywords": [
     "ecdsa",
@@ -19,10 +22,18 @@
     "node": ">=20.0.0"
   },
   "dependencies": {
-    "@dotenvx/dotenvx": "^1.49.0",
     "cors": "^2.8.5",
     "ethereum-cryptography": "^3.2.0",
-    "express": "^5.1.0",
-    "nodemon": "^3.1.10"
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@dotenvx/dotenvx": "^1.51.1",
+    "@ecdsa-node/schema": "workspace:*",
+    "@tsconfig/node-lts": "^22.0.2",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.5",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "zod": "^4.1.12"
   }
 }

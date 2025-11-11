@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState, type SVGProps } from 'react';
+import type { JSX } from 'react/jsx-runtime';
 import { name as project } from '../package.json';
 
 const key = `${project}-theme`;
@@ -24,13 +25,13 @@ function ThemeToggle() {
       className="cursor-pointer group rounded-full bg-white/90 px-2 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
       onClick={() => setTheme(nextTheme)}
     >
-      <SunIcon className="hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-zinc-400 [@media_not_(prefers-color-scheme:dark)]:fill-stone-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-stone-300" />
+      <SunIcon className="hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-zinc-400 not-[@media_(prefers-color-scheme:dark)]:fill-stone-400/10 not-[@media_(prefers-color-scheme:dark)]:stroke-stone-300" />
       <MoonIcon className="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-stone-50 [@media(prefers-color-scheme:dark)]:stroke-stone-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-stone-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-stone-600" />
     </button>
   );
 }
 
-function SunIcon(props) {
+function SunIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -49,7 +50,7 @@ function SunIcon(props) {
   );
 }
 
-function MoonIcon(props) {
+function MoonIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
       <path

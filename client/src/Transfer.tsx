@@ -1,24 +1,37 @@
-import { useState, useEffect } from 'react';
-import { sign } from './lib';
+import type { Transfer as TransferType } from '@ecdsa-node/schema';
 import { ArrowRightCircleIcon } from '@heroicons/react/20/solid';
+import { useEffect, useState } from 'react';
+import { sign } from './lib';
 
-function Transfer({ sender, balance, setBalance, transfers, setTransfers }) {
-  const [nonce, setNonce] = useState(Date.now()); // used to protect against transaction replay
+function Transfer({
+  sender,
+  balance,
+  setBalance,
+  transfers,
+  setTransfers,
+}: {
+  sender: string;
+  balance: number;
+  setBalance: React.Dispatch<React.SetStateAction<number>>;
+  transfers: TransferType[];
+  setTransfers: React.Dispatch<React.SetStateAction<TransferType[]>>;
+}) {
+  const [nonce, setNonce] = useState(() => Date.now()); // used to protect against transaction replay
 
   useEffect(
     function resetForm() {
-      document.querySelector('form').reset();
+      document.querySelector('form')!.reset();
     },
     [sender]
   );
 
-  async function transfer(ev) {
+  async function transfer(ev: React.FormEvent<HTMLFormElement>) {
     ev.preventDefault();
 
     try {
-      const formData = new FormData(ev.target);
-      const amount = parseInt(formData.get('amount') ?? 0);
-      const recipient = formData.get('recipient') ?? '';
+      const formData = new FormData(ev.target as HTMLFormElement);
+      const amount = parseInt(formData.get('amount')?.toString() ?? '0');
+      const recipient = formData.get('recipient')?.toString() ?? '';
 
       const message = {
         amount,
@@ -51,8 +64,10 @@ function Transfer({ sender, balance, setBalance, transfers, setTransfers }) {
         },
         ...transfers,
       ]);
-    } catch ({ message }) {
-      console.error(message);
+    } catch (error) {
+      if (error instanceof Error) {
+        console.error(error.message);
+      }
     }
   }
 

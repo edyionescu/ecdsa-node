@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    /* Linting */
+    "strict": true,
+    "skipLibCheck": true,
+    "moduleDetection": "force",
+    "target": "ES2022"
+  }
+}

@@ -1,0 +1,16 @@
+# Ignore artifacts:
+build
+dist
+.turbo
+
+# Ignore development-related files:
+*.log
+.env
+.env.local
+
+# Ignore dependency directories:
+node_modules
+
+# Ignore specific files or directories from packages:
+client/dist
+server/dist

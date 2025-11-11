@@ -1,11 +1,15 @@
-import { secp256k1 } from 'ethereum-cryptography/secp256k1.js';
+import type { Accounts } from '@ecdsa-node/schema';
 import { keccak256 } from 'ethereum-cryptography/keccak.js';
+import { secp256k1 } from 'ethereum-cryptography/secp256k1.js';
 import { utf8ToBytes } from 'ethereum-cryptography/utils.js';
 
 import ACCOUNTS from '../../../accounts.config.json';
 
-function sign(address, message) {
-  const { privateKey } = ACCOUNTS[address];
+const accounts: Accounts = ACCOUNTS;
+
+function sign(address: string, message: string) {
+  const account = accounts[address];
+  const { privateKey } = account;
   const messageHash = _hashMessage(message);
 
   const signature = secp256k1.sign(messageHash, privateKey);
@@ -15,11 +19,11 @@ function sign(address, message) {
   return { signatureHex, bit };
 }
 
-function _hashMessage(message) {
+function _hashMessage(message: string) {
   return keccak256(utf8ToBytes(message));
 }
 
-function formatDateTime(timestamp) {
+function formatDateTime(timestamp: number) {
   const formatter = new Intl.DateTimeFormat('en-US', {
     dateStyle: 'medium',
     timeStyle: 'medium',
@@ -30,4 +34,4 @@ function formatDateTime(timestamp) {
   return formatter.format(new Date(timestamp));
 }
 
-export { ACCOUNTS, sign, formatDateTime };
+export { accounts, formatDateTime, sign };

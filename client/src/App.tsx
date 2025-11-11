@@ -1,14 +1,15 @@
-import { useState, useEffect } from 'react';
+import type { Transfer as TransferType } from '@ecdsa-node/schema';
+import { useEffect, useState } from 'react';
 
-import Wallet from './Wallet';
-import Transfer from './Transfer';
 import History from './History';
 import ThemeToggle from './ThemeToggle';
+import Transfer from './Transfer';
+import Wallet from './Wallet';
 
 function App() {
   const [balance, setBalance] = useState(0);
   const [sender, setSender] = useState('');
-  const [transfers, setTransfers] = useState([]);
+  const [transfers, setTransfers] = useState<TransferType[]>([]);
 
   useEffect(function fetchTransfers() {
     (async () => {
@@ -17,8 +18,10 @@ function App() {
         const response = await fetch(`${server}/transfers`);
         const { transfers } = await response.json();
         setTransfers(transfers);
-      } catch ({ message }) {
-        console.error(message);
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error(error.message);
+        }
       }
     })();
   }, []);
