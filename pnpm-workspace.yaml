@@ -18,6 +18,8 @@ onlyBuiltDependencies:
 overrides:
   body-parser@>=2.2.0 <2.2.1: '>=2.2.1'
   brace-expansion@>=4.0.0 <5.0.5: '>=5.0.5'
+  esbuild@>=0.17.0 <0.28.1: ^0.28.1
+  esbuild@>=0.27.3 <0.28.1: ^0.28.1
   js-yaml@>=4.0.0 <4.1.1: '>=4.1.1'
   minimatch@<10.2.1: '>=10.2.1'
   minimatch@>=10.0.0 <10.2.3: '>=10.2.3'
